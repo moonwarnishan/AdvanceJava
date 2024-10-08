@@ -40,5 +40,6 @@ public class Main {
         items.add(1);
         int x = items.get(0);
         System.out.println(x);
+
     }
 }
