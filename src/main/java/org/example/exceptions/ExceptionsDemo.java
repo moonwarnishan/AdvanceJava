@@ -2,18 +2,40 @@ package org.example.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class ExceptionsDemo {
     public static void show()
     {
+        FileReader reader = null;
         try
         {
-            var reader = new FileReader("file.txt");
+            new SimpleDateFormat().parse("");
+             reader = new FileReader("file.txt");
             System.out.println("File Opened");
         }
         catch (FileNotFoundException ex)
         {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
+        catch (IOException | ParseException e)
+        {
+            System.out.println("Could not read data.");
+        }
+        finally {
+            if(reader !=null)
+            {
+                try {
+                    reader.close();
+                    System.out.println("Hello this is finally");
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
         }
         //sayHello(null);
     }
