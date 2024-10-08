@@ -8,6 +8,13 @@ public class Main {
 
         //ExceptionsDemo.show();
         var account = new Account();
-        account.deposit(-1F);
+        try {
+            account.deposit(-1F);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
     }
 }
