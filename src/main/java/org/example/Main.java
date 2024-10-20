@@ -3,6 +3,7 @@ package org.example;
 import org.example.generics.Uitls;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -37,7 +38,9 @@ public class Main {
 //        int x = items.get(0);
 //        System.out.println(x);
 
-        var uitls = new Uitls(1,"hello");
-        uitls.printKeyValues();
+//        var uitls = new Uitls(1,"hello");
+//        uitls.printKeyValues();
+        var list = List.of(1,2,3,4,5,6);
+        list.forEach(System.out::println);
     }
 }
