@@ -3,6 +3,7 @@ package org.example;
 import org.example.basiceclasses.Genre;
 import org.example.basiceclasses.Movie;
 import org.example.generics.Uitls;
+import org.example.threaddemo.ThreadDemo;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         //ExceptionsDemo.show();
 //        var account = new Account();
@@ -104,5 +105,11 @@ public class Main {
 //                .collect(Collectors.groupingBy(Movie::getGenre),
 //                                                Collectors.mapping(Movie::getName,Collectors.joining(", ")));
 //        System.out.println(Optional.ofNullable(result));
+
+//        //process and thread
+//        System.out.println(Thread.activeCount());
+//        System.out.println(Runtime.getRuntime().availableProcessors());
+
+        ThreadDemo.show();
     }
 }
