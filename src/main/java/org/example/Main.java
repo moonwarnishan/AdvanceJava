@@ -4,6 +4,8 @@ import org.example.generics.Uitls;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -40,7 +42,14 @@ public class Main {
 
 //        var uitls = new Uitls(1,"hello");
 //        uitls.printKeyValues();
-        var list = List.of(1,2,3,4,5,6);
-        list.forEach(System.out::println);
+//        var list = List.of(1,2,3,4,5,6);
+//        list.forEach(System.out::println);
+
+        //List<String> stringList = List.of("a","b","c","d","e","f");
+        BinaryOperator<Integer> add = (a,b)->a+b;
+        Function<Integer,Integer> square = a->a*a;
+        var result = add.andThen(square).apply(1,2);
+        System.out.println(result);
+
     }
 }
